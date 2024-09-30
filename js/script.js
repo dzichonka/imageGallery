@@ -67,15 +67,16 @@ const images = document.querySelectorAll('.gallery-item');
 
 content.addEventListener('click', (e) => {
   if (e.target && e.target.classList.contains('gallery-item_img')) {
+    modalImg.src = e.target.src;
     modal.classList.add('modal-open');
     modal.classList.remove('modal-close');
     document.body.style.overflow = "hidden";
-    modalImg.src = e.target.src;
   }
 });
 
 window.addEventListener("click", (e) => {
   if (e.target === modal) {
+    modalImg.src = '';
     modal.classList.remove('modal-open');
     modal.classList.add('modal-close');
     document.body.style.overflow = "";
