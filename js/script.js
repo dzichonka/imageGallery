@@ -67,6 +67,7 @@ const images = document.querySelectorAll('.gallery-item');
 
 content.addEventListener('click', (e) => {
   if (e.target && e.target.classList.contains('gallery-item_img')) {
+    modalImg.src = '';
     modalImg.src = e.target.src;
     modal.classList.add('modal-open');
     modal.classList.remove('modal-close');
