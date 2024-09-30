@@ -1,3 +1,4 @@
+'use strict';
 const accessKey = 'N1enlcYf2BdeVz4WDyU9PAX5nPTK2Zd3UC2Io_EmZ1Y';
 const baseUrl = 'https://api.unsplash.com/search/photos';
 const content = document.querySelector('.content');
@@ -48,11 +49,36 @@ function displayImages(photos) {
 
   photos.forEach(photo => {
     const elem = document.createElement('div');
-    elem.className = 'gallery-item';
+    elem.classList.add('gallery-item');
     const img = document.createElement('img');
-    img.src = photo.urls.small;
+    img.src = photo.urls.regular;
     img.alt = photo.alt_description;
+    img.classList.add('gallery-item_img');
     elem.appendChild(img);
     content.appendChild(elem);
   });
 }
+//modal
+const modal = document.querySelector(".modal");
+const modalImg = document.querySelector(".modal-img");
+const closeModal = document.querySelector(".modal-close");
+const images = document.querySelectorAll('.gallery-item');
+
+
+content.addEventListener('click', (e) => {
+  if (e.target && e.target.classList.contains('gallery-item_img')) {
+    modal.classList.add('modal-open');
+    modal.classList.remove('modal-close');
+    document.body.style.overflow = "hidden";
+    modalImg.src = e.target.src;
+  }
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('modal-open');
+    modal.classList.add('modal-close');
+    document.body.style.overflow = "";
+  }
+});
+
