@@ -1,0 +1,132 @@
+* {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    text-align: left;
+    line-height: 1;
+}
+
+body {
+    background: $main-color;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+header,
+footer {
+    background: $gradient;
+}
+
+.search-box {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: end;
+}
+
+.search-input {
+    outline-color: $dark-color;
+    border: 1px solid $dark-color;
+    box-shadow: 0 0 0 2px $main-color;
+    border-radius: 30px;
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    transform: translateX(60px);
+}
+
+.search-icon {
+    color: $dark-color;
+    z-index: 2;
+    transition: all 0.5s ease;
+
+    &:hover {
+        scale: 1.2;
+
+    }
+}
+
+.clear-btn {
+    all: unset;
+    border: 2px solid $dark-color;
+    box-shadow: 0 0 0 2px $main-color;
+    background-color: $main-color;
+    color: $dark-color;
+    border-radius: 30px;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover {
+
+        scale: 1.1;
+    }
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    //background-color: $light-color;
+    box-shadow: 0 0 10px $light-color;
+    padding: 30px;
+    width: calc(33% - 15px);
+    transition: all 0.5s ease;
+
+    &:hover {
+        box-shadow: 0 0 15px $light-color;
+        scale: 1.05;
+
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+footer {
+    .footer-wraper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-item {
+        margin: 0 auto;
+    }
+
+    .link-img {
+        height: 40px;
+        transition: all 0.5s ease;
+
+        &:hover {
+            scale: 1.05;
+        }
+    }
+
+    .rsschool {
+        width: 110px;
+    }
+
+    .year {
+        width: 110px;
+        text-align: right;
+        font-size: 24px;
+    }
+}
