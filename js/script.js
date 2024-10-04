@@ -8,7 +8,7 @@ const clearButton = document.querySelector('#clear-btn');
 
 window.addEventListener('load', () => {
   searchInput.focus();
-  fetchImages('night');
+  fetchImages('cat');
 });
 
 searchInput.addEventListener('keypress', (e) => {

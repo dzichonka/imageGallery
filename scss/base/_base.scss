@@ -11,6 +11,10 @@
 
 body {
     background: $main-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 .container {
@@ -46,6 +50,8 @@ footer {
 .search-icon {
     color: $dark-color;
     z-index: 2;
+
+    cursor: pointer;
     transition: all 0.5s ease;
 
     &:hover {
